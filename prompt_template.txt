@@ -1,0 +1,4 @@
+Can you evaluate how well this example conveys its meaning, how well it is organized and structured, whether it fits the theme of the conversation, and whether its responses are accurate?
+Please rate text below from 1 (poor) to 5 (excellent), RESPONSE ONLY ONE NUMBER:
+
+{{ context }}

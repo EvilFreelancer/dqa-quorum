@@ -1,0 +1,9 @@
+experts:
+  # - model: gpt-4o
+  #   base_url: https://api.openai.com/v1
+  #   api_key: sk-xxx
+  - model: gpt-3.5-turbo
+  - model: anthropic/claude-3-haiku
+  - model: perplexity/llama-3-sonar-small-32k-online
+  - model: google/palm-2-chat-bison-32k
+  - model: google/gemma-2-9b-it
