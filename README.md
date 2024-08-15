@@ -71,3 +71,23 @@ See [dqa.ipynb](./dqa.ipynb) for a detailed example.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Citation
+
+If you use this project in your research or work, please cite it as follows:
+
+```text
+[Pavel Rykov]. (2024). Quorum of LLMs for Dataset Quality Assessment. GitHub. https://github.com/EvilFreelancer/dqa-quorum
+```
+
+Alternatively, in BibTeX format:
+
+```
+@misc{pavelrykov2024dqaquorum,
+  author = {Pavel Rykov},
+  title = {Quorum of LLMs for Dataset Quality Assessment},
+  year = {2024},
+  publisher = {GitHub},
+  howpublished = {\url{https://github.com/EvilFreelancer/dqa-quorum}},
+}
+```
