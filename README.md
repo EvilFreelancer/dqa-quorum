@@ -82,12 +82,12 @@ If you use this project in your research or work, please cite it as follows:
 
 Alternatively, in BibTeX format:
 
-```
+```bibtex
 @misc{pavelrykov2024dqaquorum,
   author = {Pavel Rykov},
-  title = {Quorum of LLMs for Dataset Quality Assessment},
-  year = {2024},
-  publisher = {GitHub},
-  howpublished = {\url{https://github.com/EvilFreelancer/dqa-quorum}},
+  title  = {Quorum of LLMs for Dataset Quality Assessment},
+  month  = {aug},
+  year   = {2024},
+  url    = {https://github.com/EvilFreelancer/dqa-quorum}
 }
 ```
