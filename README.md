@@ -18,7 +18,9 @@ from the cleaned version.
 
 ## Architecture
 
-### Experts
+![arch](./assets/arch.png)
+
+### Quorum of LLMs (experts)
 
 You may use any LLM as an expert for your quorum; the only limitation is that the remote API should be compatible with
 the OpenAI API client.
