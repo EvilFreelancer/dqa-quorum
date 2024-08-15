@@ -20,8 +20,8 @@ from the cleaned version.
 
 ### Experts
 
-You may use any LLM as expert for your quorum, only one limitation is remote API should be compatible with OpenAI API
-client.
+You may use any LLM as an expert for your quorum; the only limitation is that the remote API should be compatible with
+the OpenAI API client.
 
 Example of `experts.yml` configuration:
 
@@ -34,11 +34,11 @@ experts:
   - model: google/gemma-2-9b-it
 ```
 
-Here you may set multiple models, they will work as an experts o quorum.
+Here you may set multiple models; they will work as experts in the quorum.
 
 ### Advanced settings of experts
 
-You may use different API keys, base URLs and prompt template:
+You may use different API keys, base URLs, and prompt templates:
 
 ```yaml
 experts:
@@ -53,7 +53,7 @@ experts:
 
 ### Prompt template
 
-Template at least should have `{{ context }}` field. 
+The template should at least include the `{{ context }}` field.
 
 ```text
 Can you evaluate how well this example conveys its meaning, how well it is organized and structured, whether it fits the theme of the conversation, and whether its responses are accurate?
