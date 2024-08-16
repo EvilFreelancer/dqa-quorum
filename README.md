@@ -70,7 +70,8 @@ See [prompt_template.txt](./prompt_template.txt) for details.
 
 ### Example
 
-See [dqa.ipynb](./dqa.ipynb) for a detailed example.
+* [dqa.ipynb](./examples/dqa.ipynb) - standalone example with all classes and function used under the hood.
+* [dqa-simplified.ipynb](./examples/dqa-simplified.ipynb) - simplified example, it works in the same way
 
 ## License
 
@@ -90,7 +91,6 @@ Alternatively, in BibTeX format:
 @misc{pavelrykov2024dqaquorum,
   author = {Pavel Rykov},
   title  = {Quorum of LLMs for Dataset Quality Assessment},
-  month  = {aug},
   year   = {2024},
   url    = {https://github.com/EvilFreelancer/dqa-quorum}
 }
