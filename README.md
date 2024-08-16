@@ -18,9 +18,11 @@ from the cleaned version.
 
 ## Architecture
 
-![arch](./assets/arch.png)
+<p align="center">
+<img src="https://github.com/EvilFreelancer/dqa-quorum/blob/main/assets/arch.png?raw=true" alt="arch" width=50% height=50%/>
+</p>
 
-### Quorum of LLMs (experts)
+### Quorum of experts
 
 You may use any LLM as an expert for your quorum; the only limitation is that the remote API should be compatible with
 the OpenAI API client.
