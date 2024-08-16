@@ -1,6 +1,19 @@
 from jinja2 import Template
 from openai import OpenAI
-from settings import OPENAI_API_KEY, OPENAI_BASE_URL, MAX_TOKENS_OUTPUT, PROMPT_TEMPLATE
+import concurrent.futures
+
+from .settings import (
+    OPENAI_API_KEY,
+    OPENAI_BASE_URL,
+    MAX_TOKENS_OUTPUT,
+    PROMPT_TEMPLATE,
+    MAX_TOKENS_INPUT
+)
+
+from .utils import get_logger
+from .helpers import get_tokens_num
+
+_log = get_logger()
 
 
 class Expert:
@@ -34,7 +47,7 @@ class Expert:
         try:
             rating = int(''.join(filter(str.isdigit, response_text)))
         except ValueError:
-            print("Invalid rating value in response: {}".format(response_text))
+            _log.error("Model: {} - Invalid rating value in response: {}".format(self.model, response_text))
             return None
 
         # Ensure the rating is within the valid range [1, 5]
@@ -42,3 +55,32 @@ class Expert:
         if rating > 5: rating = 5
 
         return rating
+
+
+# Processing function, due to limitation of concurrent requests in python
+def process_model(expert: Expert, data: str) -> int:
+    return expert.rate_sample(data)
+
+
+def rate_sample(sample: str, experts: list, max_workers: int = 4):
+    # Count the number of tokens in the sample
+    num_tokens = get_tokens_num(sample)
+    if num_tokens > MAX_TOKENS_INPUT:
+        _log.error(f"Skipping sample: Size exceeds limit ({num_tokens} tokens)")
+        return None
+
+    _log.debug(f"Processing sample: {sample}")
+
+    # Define a function to be executed by each worker
+    def rate_expert(expert):
+        return expert.model, process_model(expert, sample)
+
+    # Create a thread pool with the specified number of workers
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        ratings = list(executor.map(rate_expert, experts))
+
+    # Convert the list of tuples into a dictionary
+    ratings_by_expert = {model: rating for model, rating in ratings}
+    _log.debug("Ratings:", ratings_by_expert)
+
+    return ratings_by_expert
