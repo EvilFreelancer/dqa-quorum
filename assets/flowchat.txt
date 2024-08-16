@@ -1,0 +1,13 @@
+Dataset Quality Assessment {
+  Average Rating\n>= 3.5 #avg.shape_diamond.color_grey
+    Yes: Classify as Good .color_green
+      Include in Cleaned Dataset .color_green
+    No: Classify as Bad .color_blue
+      Exclude from Dataset #exclude.color_blue
+  Receive Sample
+    Rate Sample Using Quorum of LLMs
+      Majority Vote \(50%+1\)\nAchieved? .shape_diamond.color_grey
+        Yes: Calculate\nAverage Rating
+          (#avg)
+        No: (#exclude)
+}

@@ -18,9 +18,9 @@ from the cleaned version.
 
 ## Architecture
 
-<p align="center">
-<img src="https://github.com/EvilFreelancer/dqa-quorum/blob/main/assets/arch.png?raw=true" alt="arch" width=50% height=50%/>
-</p>
+Each sample of dataset will be processed separately.
+
+![arch](./assets/arch.png)
 
 ### Quorum of experts
 
